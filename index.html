@@ -3,15 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>הפניה...</title>
+    <title>JeepCampIL - הבית שלך בשטח!</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TK3W68WP');</script>
+    <!-- End Google Tag Manager -->
+
     <script>
+        // שליחת אירוע Lead ל-GTM
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'Lead',
+            'category': 'User Interaction',
+            'action': 'Page View',
+            'label': 'Redirect to WhatsApp Group'
+        });
+
+        // הפניה אוטומטית לוואטסאפ אחרי 3 שניות
         setTimeout(function() {
-            window.location.href = "redirect.html";
-        }, 1000);
+            window.location.href = "https://chat.whatsapp.com/HqCdHm3rcSvHYBfnFayOqg";
+        }, 3000);
     </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-top: 20px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #333;
+        }
+        h2 {
+            font-size: 24px;
+            color: #666;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #0078D7;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h2>המתן שנייה...</h2>
-    <p>אם לא הופנית אוטומטית, <a href="redirect.html">לחץ כאן</a></p>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK3W68WP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="container">
+        <h1>JeepCampIL - הבית שלך בשטח!</h1>
+        <h2>עוד רגע... ואתם חלק מקהילת השטח של ישראל!</h2>
+        <p>מועבר כעת לקבוצת הוואטסאפ...</p>
+        <p>אם לא הועברת אוטומטית, <a href="https://chat.whatsapp.com/HqCdHm3rcSvHYBfnFayOqg">לחץ כאן</a></p>
+    </div>
 </body>
 </html>
