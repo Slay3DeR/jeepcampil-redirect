@@ -23,10 +23,18 @@
             'label': 'Redirect to WhatsApp Group'
         });
 
-        // הפניה אוטומטית לוואטסאפ אחרי 3 שניות
-        setTimeout(function() {
-            window.location.href = "https://chat.whatsapp.com/HqCdHm3rcSvHYBfnFayOqg";
-        }, 3000);
+        // הפניה אוטומטית לוואטסאפ עם טיימר
+        let countdown = 5; // זמן שניות לפני המעבר
+        function updateCountdown() {
+            document.getElementById("countdown").innerText = countdown;
+            countdown--;
+            if (countdown < 0) {
+                window.location.href = "https://chat.whatsapp.com/HqCdHm3rcSvHYBfnFayOqg";
+            } else {
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+        setTimeout(updateCountdown, 1000);
     </script>
 
     <style>
@@ -39,7 +47,7 @@
             margin: 0;
         }
         .container {
-            background: rgba(255, 255, 255, 0.8); /* רקע לבן עם שקיפות */
+            background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -54,6 +62,10 @@
             font-size: 24px;
             color: #666;
         }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
         a {
             display: inline-block;
             margin-top: 15px;
@@ -62,6 +74,12 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            font-weight: bold;
+        }
+        .countdown-box {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff0000;
         }
     </style>
 </head>
@@ -74,7 +92,7 @@
     <div class="container">
         <h1>JeepCampIL - הבית שלך בשטח!</h1>
         <h2>עוד רגע... ואתם חלק מקהילת השטח של ישראל!</h2>
-        <p>מועבר כעת לקבוצת הוואטסאפ...</p>
+        <p>מעבר לקבוצת הוואטסאפ בעוד <span class="countdown-box" id="countdown">5</span> שניות...</p>
         <p>אם לא הועברת אוטומטית, <a href="https://chat.whatsapp.com/HqCdHm3rcSvHYBfnFayOqg">לחץ כאן</a></p>
     </div>
 </body>
