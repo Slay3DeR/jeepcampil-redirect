@@ -17,8 +17,12 @@
         'https://connect.facebook.net/en_US/fbevents.js');
 
         fbq('init', '1965757367242230'); 
-        fbq('track', 'PageView');  // דיווח על צפייה בדף
-        fbq('track', 'Lead');  // דיווח על ליד עבור כל צפייה בדף
+
+        // נטען מיד, בלי קשר לתמונה
+        window.addEventListener("load", function() {
+            fbq('track', 'PageView');  
+            fbq('track', 'Lead');  
+        });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1965757367242230&ev=PageView&noscript=1"
