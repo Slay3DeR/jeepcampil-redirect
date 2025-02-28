@@ -16,20 +16,19 @@
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
 
-        // ברגע שהפיקסל נטען – שולח את האירועים
+        // ברגע שהפיקסל נטען – שולח רק "Lead" (ללא PageView)
         document.addEventListener("DOMContentLoaded", function() {
             if (typeof fbq === "function") {
                 fbq('init', '1965757367242230'); 
-                fbq('track', 'PageView'); // צפייה בדף
-                fbq('track', 'Lead'); // שליחת ליד
-                console.log("🚀 Facebook Pixel נטען בהצלחה! לידים נשלחים!");
+                fbq('track', 'Lead'); // רק שליחת ליד
+                console.log("🚀 Facebook Pixel נטען בהצלחה! נשלח רק Lead!");
             } else {
                 console.error("⚠️ Facebook Pixel לא נטען כראוי!");
             }
         });
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1965757367242230&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=1965757367242230&ev=Lead&noscript=1"
 /></noscript>
     <!-- End Meta Pixel Code -->
 
