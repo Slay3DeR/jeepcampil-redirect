@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JeepCampIL - הבית שלך בשטח!</title>
-
     <!-- Meta Pixel Code (Facebook Pixel) -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -15,7 +14,6 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-
         // ברגע שהפיקסל נטען – שולח רק "Lead" (ללא PageView)
         document.addEventListener("DOMContentLoaded", function() {
             if (typeof fbq === "function") {
@@ -31,7 +29,6 @@
     src="https://www.facebook.com/tr?id=1965757367242230&ev=Lead&noscript=1"
 /></noscript>
     <!-- End Meta Pixel Code -->
-
     <script>
         // הפניה אוטומטית לוואטסאפ עם טיימר
         let countdown = 3; // זמן שניות לפני המעבר
@@ -39,70 +36,594 @@
             document.getElementById("countdown").innerText = countdown;
             countdown--;
             if (countdown < 0) {
-                window.location.href = "https://chat.whatsapp.com/BzGKCDGrj0Q5iabz9OpKsC";
+                window.location.href = "https://chat.whatsapp.com/JOiPPX2RovMALtXBKpmjxD";
             } else {
                 setTimeout(updateCountdown, 1000);
             }
         }
         document.addEventListener("DOMContentLoaded", function() {
             setTimeout(updateCountdown, 1000);
+            
+            // יצירת חלקיקי בוץ דינמיים
+            createMudParticles();
+            
+            // אנימציות כניסה לאלמנטים
+            animateElements();
         });
-    </script>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: url('https://github.com/Slay3DeR/jeepcampil-redirect/raw/main/jeepcamp-b.jpg') no-repeat center center fixed;
-            background-size: cover;
-            padding: 50px;
-            margin: 0;
+        
+        function createMudParticles() {
+            const particlesContainer = document.getElementById('mud-particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'mud-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 3 + 's';
+                particle.style.animationDuration = (3 + Math.random() * 2) + 's';
+                particlesContainer.appendChild(particle);
+            }
         }
+        
+        function animateElements() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, index * 200);
+            });
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(to bottom, #87CEEB 0%, #D2B48C 60%, #8B4513 100%);
+        }
+        
+        /* רקע הרים */
+        .mountains {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600"><path fill="%23654321" d="M0,400 L200,300 L400,350 L600,200 L800,280 L1000,250 L1200,320 L1440,300 L1440,600 L0,600 Z"/><path fill="%23543210" opacity="0.5" d="M0,450 L300,380 L600,420 L900,350 L1200,400 L1440,380 L1440,600 L0,600 Z"/></svg>') no-repeat bottom center;
+            background-size: cover;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+        /* שביל הבוץ */
+        .mud-road {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 200px;
+            background: linear-gradient(to top, #4A3C28 0%, transparent 100%);
+            clip-path: polygon(30% 100%, 70% 100%, 60% 0%, 40% 0%);
+            z-index: 2;
+            opacity: 0.6;
+        }
+        
+        /* ג'יפ מונפש */
+        .jeep-container {
+            position: absolute;
+            bottom: 50px;
+            left: -200px;
+            width: 180px;
+            height: 100px;
+            z-index: 5;
+            animation: driveJeep 8s linear infinite;
+        }
+        
+        .jeep {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            animation: bounce 0.5s ease-in-out infinite;
+        }
+        
+        /* גוף הג'יפ */
+        .jeep-body {
+            position: absolute;
+            bottom: 30px;
+            left: 10px;
+            width: 160px;
+            height: 50px;
+            background: linear-gradient(135deg, #2C5F2D 0%, #4A7C59 100%);
+            border-radius: 5px 15px 5px 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* חלונות הג'יפ */
+        .jeep-window {
+            position: absolute;
+            top: 5px;
+            width: 35px;
+            height: 20px;
+            background: linear-gradient(135deg, #87CEEB, #B0E0E6);
+            border: 2px solid #1C3F1D;
+        }
+        
+        .jeep-window.front {
+            right: 15px;
+            border-radius: 0 5px 0 0;
+        }
+        
+        .jeep-window.back {
+            left: 15px;
+            border-radius: 0;
+        }
+        
+        /* גלגלים */
+        .wheel {
+            position: absolute;
+            bottom: 5px;
+            width: 35px;
+            height: 35px;
+            background: radial-gradient(circle, #2C2C2C 40%, #1A1A1A 60%, #000 100%);
+            border-radius: 50%;
+            border: 3px solid #333;
+            animation: wheelRotate 0.5s linear infinite;
+        }
+        
+        .wheel.front {
+            right: 20px;
+        }
+        
+        .wheel.back {
+            left: 20px;
+        }
+        
+        .wheel::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+            height: 15px;
+            background: #666;
+            border-radius: 50%;
+        }
+        
+        /* אנימציית נסיעה */
+        @keyframes driveJeep {
+            0% {
+                left: -200px;
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-2deg);
+            }
+            50% {
+                left: 50%;
+                transform: translateX(-50%) rotate(2deg);
+            }
+            75% {
+                transform: rotate(-1deg);
+            }
+            100% {
+                left: calc(100% + 200px);
+                transform: rotate(0deg);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-3px) rotate(-1deg);
+            }
+            75% {
+                transform: translateY(-3px) rotate(1deg);
+            }
+        }
+        
+        @keyframes wheelRotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* חלקיקי בוץ */
+        #mud-particles {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 4;
+        }
+        
+        .mud-particle {
+            position: absolute;
+            bottom: 80px;
+            width: 8px;
+            height: 8px;
+            background: #4A3C28;
+            border-radius: 50%;
+            opacity: 0;
+            animation: flyMud 3s ease-out infinite;
+        }
+        
+        @keyframes flyMud {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) scale(0);
+            }
+            20% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(calc(-50px + 100px * var(--random-x, 0)), -150px) scale(0.3);
+            }
+        }
+        
+        .mud-particle:nth-child(odd) {
+            --random-x: -1;
+        }
+        
+        .mud-particle:nth-child(even) {
+            --random-x: 1;
+        }
+        
+        /* ענני אבק */
+        .dust-cloud {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 100px;
+            z-index: 3;
+        }
+        
+        .dust-cloud::before,
+        .dust-cloud::after {
+            content: '';
+            position: absolute;
+            background: radial-gradient(circle, rgba(139, 69, 19, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: dustFloat 4s ease-in-out infinite;
+        }
+        
+        .dust-cloud::before {
+            width: 150px;
+            height: 80px;
+            left: 0;
+            animation-delay: 0s;
+        }
+        
+        .dust-cloud::after {
+            width: 180px;
+            height: 100px;
+            right: 0;
+            animation-delay: 2s;
+        }
+        
+        @keyframes dustFloat {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.5) translateY(20px);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2) translateY(-10px);
+            }
+        }
+        
+        /* קונטיינר תוכן */
         .container {
-            background: rgba(255, 255, 255, 0.8);
+            position: relative;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 100px rgba(139, 69, 19, 0.2);
+            display: inline-block;
+            margin-top: 10vh;
+            z-index: 10;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(139, 69, 19, 0.2);
+            max-width: 90%;
+            animation: containerPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes containerPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 100px rgba(139, 69, 19, 0.2);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4), 0 0 120px rgba(139, 69, 19, 0.3);
+            }
+        }
+        
+        /* טקסטים עם אנימציות */
+        h1 {
+            font-size: clamp(28px, 5vw, 40px);
+            color: #2C5F2D;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: titleGlow 2s ease-in-out infinite alternate;
+            position: relative;
+        }
+        
+        h1::after {
+            content: '🚙';
+            position: absolute;
+            right: -50px;
+            animation: jeepIcon 3s ease-in-out infinite;
+        }
+        
+        @keyframes jeepIcon {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(10deg);
+            }
+        }
+        
+        @keyframes titleGlow {
+            from {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            }
+            to {
+                text-shadow: 2px 2px 20px rgba(44, 95, 45, 0.5);
+            }
+        }
+        
+        h2 {
+            font-size: clamp(20px, 4vw, 28px);
+            color: #4A7C59;
+            margin-bottom: 25px;
+            opacity: 0;
+            animation: slideInFade 1s ease forwards 0.5s;
+        }
+        
+        @keyframes slideInFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        p {
+            font-size: clamp(16px, 3vw, 20px);
+            color: #333;
+            margin: 15px 0;
+        }
+        
+        /* ספירה לאחור מעוצבת */
+        .countdown-wrapper {
+            margin: 30px 0;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #FFF3CD 0%, #FFE4B5 100%);
+            border-radius: 15px;
+            border: 3px solid #FFA500;
+            box-shadow: 0 5px 20px rgba(255, 165, 0, 0.3);
+            animation: countdownPulse 1s ease-in-out infinite;
+        }
+        
+        @keyframes countdownPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 5px 20px rgba(255, 165, 0, 0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 30px rgba(255, 165, 0, 0.5);
+            }
+        }
+        
+        .countdown-box {
+            font-size: clamp(40px, 6vw, 60px);
+            font-weight: bold;
+            color: #FF6B35;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            display: inline-block;
+            min-width: 70px;
+            animation: countdownBounce 1s ease-in-out infinite;
+        }
+        
+        @keyframes countdownBounce {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(5deg);
+            }
+        }
+        
+        /* כפתור WhatsApp משודרג */
+        .whatsapp-btn {
             display: inline-block;
             margin-top: 20px;
-        }
-        h1 {
-            font-size: 32px;
-            color: #333;
-        }
-        h2 {
-            font-size: 24px;
-            color: #666;
-        }
-        p {
-            font-size: 18px;
-            color: #555;
-        }
-        a {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #0078D7;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: btnShine 3s linear infinite;
         }
-        .countdown-box {
+        
+        .whatsapp-btn::before {
+            content: '💬';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             font-size: 24px;
-            font-weight: bold;
-            color: #ff0000;
+        }
+        
+        .whatsapp-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -100%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: slideShine 3s infinite;
+        }
+        
+        @keyframes slideShine {
+            0% {
+                left: -100%;
+            }
+            50%, 100% {
+                left: 200%;
+            }
+        }
+        
+        @keyframes btnShine {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            }
+            50% {
+                box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+            }
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+        }
+        
+        /* אנימציות כניסה */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* כוכבים ברקע */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        
+        /* רספונסיביות */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin-top: 5vh;
+                width: 95%;
+            }
+            
+            .jeep-container {
+                transform: scale(0.8);
+                bottom: 30px;
+            }
+            
+            h1::after {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>JeepCampIL - הבית שלך בשטח!</h1>
-        <h2>עוד רגע... ואתם חלק מקהילת השטח של ישראל!</h2>
-        <p>מעבר לקבוצת הוואטסאפ בעוד <span class="countdown-box" id="countdown">5</span> שניות...</p>
-        <p>אם לא הועברת אוטומטית, <a href="https://chat.whatsapp.com/BzGKCDGrj0Q5iabz9OpKsC">לחץ כאן</a></p>
+    <!-- כוכבים ברקע -->
+    <div class="stars">
+        <script>
+            for (let i = 0; i < 50; i++) {
+                document.write(`<div class="star" style="top: ${Math.random() * 100}%; left: ${Math.random() * 100}%; animation-delay: ${Math.random() * 3}s;"></div>`);
+            }
+        </script>
     </div>
-
+    
+    <!-- רקע הרים -->
+    <div class="mountains"></div>
+    
+    <!-- שביל בוץ -->
+    <div class="mud-road"></div>
+    
+    <!-- ענני אבק -->
+    <div class="dust-cloud"></div>
+    
+    <!-- חלקיקי בוץ -->
+    <div id="mud-particles"></div>
+    
+    <!-- ג'יפ מונפש -->
+    <div class="jeep-container">
+        <div class="jeep">
+            <div class="jeep-body">
+                <div class="jeep-window front"></div>
+                <div class="jeep-window back"></div>
+            </div>
+            <div class="wheel front"></div>
+            <div class="wheel back"></div>
+        </div>
+    </div>
+    
+    <!-- תוכן מרכזי -->
+    <div class="container">
+        <h1 class="fade-in">JeepCampIL - הבית שלך בשטח!</h1>
+        <h2 class="fade-in">עוד רגע... ואתם חלק מקהילת השטח של ישראל!</h2>
+        <div class="countdown-wrapper fade-in">
+            <p>מעבר לקבוצת הוואטסאפ בעוד</p>
+            <span class="countdown-box" id="countdown">3</span>
+            <p style="font-size: 24px; margin-top: 10px;">שניות...</p>
+        </div>
+        <p class="fade-in">אם לא הועברת אוטומטית,</p>
+        <a href="https://chat.whatsapp.com/JOiPPX2RovMALtXBKpmjxD" class="whatsapp-btn fade-in">לחץ כאן להצטרפות</a>
+    </div>
 </body>
 </html>
